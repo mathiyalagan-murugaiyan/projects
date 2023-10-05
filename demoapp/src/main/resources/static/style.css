@@ -1,0 +1,18 @@
+@charset "ISO-8859-1";
+
+#lab1{
+	color: aquamarine;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	
+}
+input:hover{
+	
+	color:rgb(0, 255, 128) ;
+}
+#div1{
+	color: blue;
+	border: 1px solid;
+	height: 250px;
+	width: 250px;
+	background-color: aquamarine;
+}
