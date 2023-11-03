@@ -5,10 +5,12 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -23,24 +25,37 @@ public class StudentController {
 
 	Student student;
 
-	@PostMapping("/student")
-	public List<Student> getStudents() {
+	@GetMapping("/students")
+	public List<Student> getStudents(Model model ,Student student) {
 
 		List<Student> list = new ArrayList<Student>();
 
 		list = studentrepo.findAll();
-		list.stream().sorted((s1, s2) -> s1.getName().compareTo(s2.getName())).forEach(System.out::println);
+		model.addAttribute(list);
+		model.addAttribute("id", student.getId());
+		model.addAttribute("name", student.getName());
+		model.addAttribute("mobile", student.getMobile());
 
 		return list;
 
 	}
 
-	@PostMapping("/students")
+	@PostMapping("/student")
 	public Student addStudent(@RequestBody Student student) {
 
 		Student s = studentrepo.save(student);
 
 		return s;
+
+	}
+
+	@PutMapping("/students{id}")
+	public ResponseEntity<String> updateStudent(@RequestBody Student student) {
+		
+		
+		studentrepo.save(student);
+
+		return ResponseEntity.ok("data save successfully");
 
 	}
 
