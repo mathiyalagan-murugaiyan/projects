@@ -12,6 +12,7 @@ import lombok.Data;
 @Entity
 public class Student {
 	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;

@@ -1,0 +1,64 @@
+
+th,
+td {
+ border: 1px solid;
+  padding: 5px;
+}
+body{
+	background-image: url(https://cdn.pixabay.com/photo/2019/04/03/08/06/forest-4099730_640.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	
+	
+}
+.nav-content > a{
+	padding: 10px;
+	height: 10px;
+}
+
+#retrive_table{
+	padding: 20px;
+}
+h1{
+	text-align: center;
+	padding-top: 40px;
+	padding-bottom: 20px;
+	color: white;
+}
+#create_Student{
+	height: 200px;
+	
+}
+form{
+	display: grid;
+	grid-template-columns: auto;
+}
+.form_content{
+	padding: 55px;
+}
+#btn{
+	position: relative;
+	left: 20px;
+	top: 30px;
+}
+
+#headcontent:nth-child(){
+	color: white;
+}
+a{
+	color: azure;
+}
+label{
+	color: white;
+	font-weight: bold;
+}
+#btn > input{
+	border-radius: 5px;
+	width: 110px;
+	height: 40px;
+}
+	
+	
+	
+	
+
