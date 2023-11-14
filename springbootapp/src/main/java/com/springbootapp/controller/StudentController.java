@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
 
 import com.springbootapp.Enitity.Student;
 import com.springbootapp.repository.StudentRepo;
@@ -33,13 +32,14 @@ public class StudentController {
 	        return "New";
 	    }
 
-//	@PostMapping("/addstudent")
-//	public Student addStudent(@RequestBody) {
-//
-//		Student student = new Student(id,name,mobile);
-//		return null;
-//
-//	}
+	@PostMapping("/addstudent")
+	public String addStudent(@RequestParam("id") Long id, @RequestParam("name" ) String name,@RequestParam("mobile")Long mobile) {
+
+		Student student = new Student(id,name,mobile);
+		studentrepo.save(student);
+		
+       return "New";
+	}
 
 	@PutMapping("/students{id}")
 	public ResponseEntity<String> updateStudent(@RequestBody Student student) {

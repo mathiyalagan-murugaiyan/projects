@@ -14,11 +14,21 @@ public class Student {
 	
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue
 	private Long id;
 	
 	private String name;
 	
 	private Long mobile;
+	
+	public Student() {
+		
+	}
 
+	public Student(Long id, String name, Long mobile) {
+		super();
+		this.id=id;
+		this.name = name;
+		this.mobile = mobile;
+	}
 }
