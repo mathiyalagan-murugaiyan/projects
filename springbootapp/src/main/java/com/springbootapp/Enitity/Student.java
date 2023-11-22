@@ -11,7 +11,8 @@ import lombok.Data;
 @Table(name="student")
 @Entity
 public class Student {
-	
+
+   
 
 	@Id
 	@GeneratedValue

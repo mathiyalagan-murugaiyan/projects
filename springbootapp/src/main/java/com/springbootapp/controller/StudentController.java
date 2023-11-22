@@ -1,19 +1,13 @@
 package com.springbootapp.controller;
 
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
-
 import com.springbootapp.Enitity.Student;
 import com.springbootapp.repository.StudentRepo;
 
@@ -29,34 +23,36 @@ public class StudentController {
 	    public String getStudents(Model model) {
 	        List<Student> students = studentrepo.findAll();
 	        model.addAttribute("students", students);
-	        return "New";
+	        return "New" ;
 	    }
 
 	@PostMapping("/addstudent")
-	public String addStudent(@RequestParam("id") Long id, @RequestParam("name" ) String name,@RequestParam("mobile")Long mobile) {
+	public String addStudent( @ModelAttribute ("student") Student student, Model model) {
 
-		Student student = new Student(id,name,mobile);
 		studentrepo.save(student);
+		 model.addAttribute("students", student);
+       return "redirect:/students" ;
+	}   
+	
+	@PostMapping("/students/update/{id}")
+	public String updateStudent(@PathVariable Long uid, @ModelAttribute("student") Student ustudent , Model model ) {
 		
-       return "New";
+		Student student1 = studentrepo.findById(uid).get();
+        student1.setName(ustudent.getName());
+        student1.setMobile(ustudent.getMobile());
+
+		studentrepo.save(student1);
+
+      return "redirect:/students";	
+
 	}
 
-	@PutMapping("/students{id}")
-	public ResponseEntity<String> updateStudent(@RequestBody Student student) {
+	@GetMapping("students/delete/{id}")
+	public String deleteStudent(@PathVariable("id") Long id) {
+       studentrepo.deleteById(id);
 		
-		
-		studentrepo.save(student);
 
-		return ResponseEntity.ok("data save successfully");
-
-	}
-
-	@DeleteMapping("{id}")
-	public ResponseEntity<String> deleteStudent(@PathVariable("id") Long id) {
-
-		studentrepo.deleteById(id);
-
-		return ResponseEntity.ok("deleted successfully");
+		return "redirect:/students" ;
 
 	}
 
