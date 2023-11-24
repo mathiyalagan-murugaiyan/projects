@@ -26,6 +26,7 @@ public class EmployeeEntity {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="emp_id")
 	private Long id;
 	
 	@Column(name="emp_name" , nullable = false)

@@ -2,6 +2,7 @@ package com.employee.entity;
 
 import java.util.Date;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -24,12 +25,16 @@ public class EmployeeDetails {
     
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="emp_did")
 	private Long did;
 	
+	@Column(name="emp_salary" ,nullable = false)
 	private Float salary;
 	
+	@Column(name="emp_roll" , nullable = false)
 	private String roll;
 	
+	@Column(name="emp_dateOfJoin" , nullable = false)
 	private Date dateOfJoin;
 	
 	
