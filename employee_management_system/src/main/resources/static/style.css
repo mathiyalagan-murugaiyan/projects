@@ -1,0 +1,14 @@
+tr{
+  border-collapse: collapse;
+}
+
+#user1{
+
+  padding: 50px;
+  background-color: rgb(240, 242, 242);
+}
+#load{
+  position: relative;
+  left: 500px;
+  top: 100px;
+}

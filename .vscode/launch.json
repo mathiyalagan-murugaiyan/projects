@@ -16,6 +16,16 @@
       "projectName": "springbootapp",
       "args": "",
       "envFile": "${workspaceFolder}/.env"
+    },
+    {
+      "type": "java",
+      "name": "Spring Boot-EmployeeManagementSystemApplication<EMS>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.employee.EmployeeManagementSystemApplication",
+      "projectName": "EMS",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
     }
   ]
 }
