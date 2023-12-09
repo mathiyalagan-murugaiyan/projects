@@ -17,7 +17,9 @@ function getUser() {
                                 <td>${element.name}</td> 
                                 <td>${element.age}</td>
                                 <td>${element.email}</td> 
-                                <td><button>update</button></td>
+                                <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                                update employee
+                                 </button></td>
                                  <td><button>delete</button></td>
                                 </tr>
                               
