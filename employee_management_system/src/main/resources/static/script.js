@@ -1,26 +1,30 @@
 const user1 = document.getElementById("user1");
 
 function getUser() {
-    // Display loading indicator while data is being fetched
+    
     document.getElementById("loading").style.display = "block";
 
-    // Fetch data from the server
+
     fetch(`http://localhost:8005/employees`)
         .then((res) => res.json())
         .then((data) => {
-            // Process the data and build the HTML
+           
             let userdata = "";
             data.forEach((element) => {
-                userdata += `<tbody class=" border border-1 text-center ">
+                userdata += `
+               
+                
+                <tbody class=" border border-1 text-center ">
+               
                                 <tr>
                                 <td>${element.id}</td>
                                 <td>${element.name}</td> 
                                 <td>${element.age}</td>
                                 <td>${element.email}</td> 
                                 <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                                update employee
+                                update
                                  </button></td>
-                                 <td><button>delete</button></td>
+                                 <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">delete</button></td>
                                 </tr>
                               
                             </tbody>`;
@@ -28,7 +32,9 @@ function getUser() {
 
             // Update the HTML content after fetching and processing data
             user1.innerHTML = `
-                <table class="container table-danger">
+
+            <button id="addemp" class="btn btn-info "> Add Employee</button>
+                <table class="container table-danger text-center">
                     <tr>
                         <th>ID</th>
                         <th>Name</th>

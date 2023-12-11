@@ -2,7 +2,7 @@ tr{
   border-collapse: collapse;
 }
 
-#user1{
+/* #user1{
 
   padding: 50px;
   background-color: rgb(240, 242, 242);
@@ -11,4 +11,13 @@ tr{
   position: relative;
   left: 500px;
   top: 100px;
+} */
+#addemp{
+  margin-bottom: 30px;
+}
+.list-gruop > a {
+  align-items: center;
+  padding-top: 20px;
+  margin-top: 20px;
+
 }

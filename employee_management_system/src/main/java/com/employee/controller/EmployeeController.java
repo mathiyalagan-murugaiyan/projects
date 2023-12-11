@@ -21,7 +21,7 @@ import com.employee.entity.EmployeeEntity;
 import com.employee.serviceimpl.EmployeeServiceIMPL;
 
 
-@Controller
+@RestController
 @RequestMapping("/")
 
 public class EmployeeController {
