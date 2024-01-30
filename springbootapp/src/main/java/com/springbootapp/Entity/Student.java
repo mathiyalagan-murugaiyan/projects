@@ -1,4 +1,4 @@
-package com.springbootapp.Enitity;
+package com.springbootapp.Entity;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -8,28 +8,27 @@ import jakarta.persistence.Table;
 import lombok.Data;
 
 @Data
-@Table(name="student")
 @Entity
+@Table(name = "student")
 public class Student {
 
-   
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
-	
-	private String name;
-	
-	private Long mobile;
-	
-	public Student() {
-		
-	}
+    private String name;
 
-	public Student(Long id, String name, Long mobile) {
-		super();
-		this.id=id;
-		this.name = name;
-		this.mobile = mobile;
-	}
+    private Long mobile;
+
+ 
+
+    public Student() {
+    }
+
+    public Student(Long id, String name, Long mobile) {
+        this.id = id;
+        this.name = name;
+        this.mobile = mobile;
+    }  
+
 }

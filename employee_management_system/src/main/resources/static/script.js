@@ -26,7 +26,7 @@ function getUser() {
                                  </button></td>
                                  <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">delete</button></td>
                                 </tr>
-                              
+                            
                             </tbody>`;
             });
 
@@ -45,20 +45,6 @@ function getUser() {
                     ${userdata}
                 </table>`;
 
-                // **************************************
-
-                user2.innerHTML = `
-                    <table class="container table-danger text-center">
-                        <tr>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Age</th>
-                            <th>Email</th>
-                            <th>Actions</th>
-                        </tr>
-                        ${userdata}
-                    </table>`;
-    
 
             // Hide the loading indicator after data is displayed
             document.getElementById("loading").style.display = "none";

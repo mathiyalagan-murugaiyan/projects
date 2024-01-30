@@ -1,5 +1,6 @@
 package com.springbootapp.controller;
 
+import java.io.IOException;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,10 +9,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import com.springbootapp.Enitity.Student;
+import com.springbootapp.Entity.Student;
 import com.springbootapp.repository.StudentRepo;
 
 @Controller
+
 public class StudentController {
 
 	@Autowired
@@ -31,8 +33,9 @@ public class StudentController {
 
 		studentrepo.save(student);
 		 model.addAttribute("students", student);
-       return "redirect:/students" ;
-	}   
+      return "redirect:/students" ;
+	} 
+	
 	
 	@PostMapping("/students/update/{id}")
 	public String updateStudent(@PathVariable Long uid, @ModelAttribute("student") Student ustudent , Model model ) {

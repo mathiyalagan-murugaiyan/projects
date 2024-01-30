@@ -56,6 +56,7 @@
               <td th:text="${student.id}"></td>
               <td th:text="${student.name}"></td>
               <td th:text="${student.mobile}"></td>
+             
 
               <td>
                      <!-- Button trigger modal -->
@@ -75,6 +76,8 @@
 
     <!-- ***************************************************************************** -->
 
+
+    <!--  Add student -->
     <div
       class="modal fade"
       id="staticBackdrop"
@@ -88,7 +91,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h1 class="modal-title fs-5" id="staticBackdropLabel">
-              Modal title
+              update
             </h1>
             <button
               type="button"
@@ -98,9 +101,9 @@
             ></button>
           </div>
           <div class="modal-body">
-            <form method="post"  action="addstudent"  thth:object="${student}">
+            <form method="post" action="addstudent" th:object="${student}">
               <label>Student id</label>
-              <input type="number" name="id"  class="form-control" />
+              <input type="number" name="id"  class="form-control"  />
 
               <label> Student Name</label>
               <input type="text" name="name" class="form-control" />
@@ -114,6 +117,8 @@
                 style="margin-top: 30px"
               />
             </form>
+           
+
           </div>
           <div class="modal-footer">
             <button
@@ -128,23 +133,26 @@
       </div>
     </div>
 
+  
+  
+  
     <div class="update-student">
      
   
 
-<!-- Modal -->
+<!-- update student -->
 <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+        <h1 class="modal-title fs-5" id="staticBackdropLabel">add</h1>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
         
         <form method="Post"  action="@{students/update/{id}(id=${student.id})}"  th:object="${student}">
           <label>Student id</label>
-          <input type="number" name="id" class="form-control" />
+          <input type="number" name="id" class="form-control" disabled/>
 
           <label> Student Name</label>
           <input type="text" name="name" class="form-control" />
@@ -162,7 +170,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Understood</button>
+       
       </div>
     </div>
   </div>
